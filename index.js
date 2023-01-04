@@ -90,7 +90,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(arr, newFlavor){
-  return arr.unshift(newFlavor);
+  arr.unshift(newFlavor);
+  return arr;
  }
 addFlavor(newFlavors, "Rainbow Sherbert");
 console.log(newFlavors);
@@ -110,7 +111,8 @@ Use the removeLastFlavor function below to do the following:
 
 
 function removeLastFlavor(arr){
-  return arr.pop();
+  arr.pop();
+  return arr;
 }
 console.log(removeLastFlavor(newFlavors));
 console.log(newFlavors.length);
