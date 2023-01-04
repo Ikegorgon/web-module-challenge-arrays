@@ -45,10 +45,13 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-
-function copy(/*your code here*/){
-  /*your code here*/
+let newFlavors = [];
+function copy(arr){
+  let newarr = [...arr];
+  return newarr;
 }
+newFlavors = copy(originalFlavors);
+console.log(newFlavors);
 
 
 
@@ -63,10 +66,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(arr){
+  if (arr.length === 31) {
+    return true;
+  } else {
+    return false;
+  }
  }
-
+console.log(newFlavors.length);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,10 +89,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(arr, newFlavor){
+  return arr.unshift(newFlavor);
  }
-
+addFlavor(newFlavors, "Rainbow Sherbert");
+console.log(newFlavors);
+console.log(newFlavors.length);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -100,9 +109,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr){
+  return arr.pop();
 }
+console.log(removeLastFlavor(newFlavors));
+console.log(newFlavors.length);
 
 
 
@@ -118,9 +129,10 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, num){
+  return arr[num];
 }
+console.log(getFlavorByIndex(newFlavors, 2));
 
 
 
@@ -138,9 +150,17 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, flavor){
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === flavor) {
+      arr.splice(i,1);
+      i--;
+    }
+  }
+  return arr;
 }
+console.log(removeFlavorByName(newFlavors, "Rocky Road"));
+console.log(newFlavors.length);
 
 
 
@@ -163,9 +183,16 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arr, filter){
+  let filteredArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(filter)) {
+      filteredArray.push(arr[i]);
+    }
+  }
+  return filteredArray;
 }
+console.log(filterByWord(newFlavors, "Chocolate"));
 
 
 
